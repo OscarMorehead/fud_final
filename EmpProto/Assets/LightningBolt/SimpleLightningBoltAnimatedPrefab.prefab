@@ -151,8 +151,8 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.50242925
-        value: 1
+        time: 0.50746465
+        value: 0.21910095
         inSlope: 0.030359413
         outSlope: 0.030359413
         tangentMode: 0
@@ -230,4 +230,4 @@ MonoBehaviour:
   ManualMode: 0
   Rows: 8
   Columns: 1
-  AnimationMode: 3
+  AnimationMode: 1
