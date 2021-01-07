@@ -26,9 +26,13 @@ public class NavWander : MonoBehaviour
     [SerializeField]
     float totalWaitTime;
 
+    [SerializeField]
+    KyleAnimations kyleAnimations;
+
     public void Start()
     {
-        kyleTheSickBoi = this.GetComponent<NavMeshAgent>();
+        kyleTheSickBoi = GetComponent<NavMeshAgent>();
+        kyleAnimations = GetComponent<KyleAnimations>();
     }
     public void Update()
     {
@@ -44,6 +48,8 @@ public class NavWander : MonoBehaviour
             {
                 isBusy = true;
                 waitLength = 0f;
+
+                kyleAnimations.Idle();
             }
             else
             {
@@ -51,6 +57,7 @@ public class NavWander : MonoBehaviour
                 SetDestination();
             }
         }
+
         if (isBusy)
         {
             waitLength += Time.deltaTime;
@@ -75,7 +82,9 @@ public class NavWander : MonoBehaviour
 
     private void MoveToNextPOI()
     {
-      if(UnityEngine.Random.Range(0f, 1f) <= .2f)
+        kyleAnimations.Walk();
+
+        if (UnityEngine.Random.Range(0f, 1f) <= .2f)
         {
             forward = !forward;
         }

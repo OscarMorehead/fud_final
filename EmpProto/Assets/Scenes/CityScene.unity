@@ -3918,6 +3918,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24244c48d0af7f34c92922d8932aa732, type: 3}
+--- !u!1 &690996894 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3162590528343061907, guid: fe5d307a344cf4d4bb311b4ec362610d, type: 3}
+  m_PrefabInstance: {fileID: 2591341163239701088}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &690996899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690996894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f8ea030a23c1054ea4041c2461d67fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1463701729}
 --- !u!1001 &715260525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9408,6 +9426,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 4cc220ee2c86c664f9cd3b3c075214c9, type: 3}
   m_PrefabInstance: {fileID: 916230568}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1463701729 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8258720627140759981, guid: fe5d307a344cf4d4bb311b4ec362610d, type: 3}
+  m_PrefabInstance: {fileID: 2591341163239701088}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1496507326
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12335,10 +12358,6 @@ PrefabInstance:
     - target: {fileID: 3162590528343061907, guid: fe5d307a344cf4d4bb311b4ec362610d, type: 3}
       propertyPath: m_Name
       value: Robot
-      objectReference: {fileID: 0}
-    - target: {fileID: 4212524844773178172, guid: fe5d307a344cf4d4bb311b4ec362610d, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 720
       objectReference: {fileID: 0}
     - target: {fileID: 4680871695254565409, guid: fe5d307a344cf4d4bb311b4ec362610d, type: 3}
       propertyPath: pOI.Array.data[0]
