@@ -65,6 +65,10 @@ public class EMP : MonoBehaviour
             bolt.EndObject.transform.position = boneTransform.position;
 
             bolts.Add(newLighting);
+
+            NavWander robot = hit.collider.transform.root.GetComponent<NavWander>();
+
+            robot.Die();
         }
 
         canShoot = true;

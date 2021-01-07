@@ -13,4 +13,8 @@ public class KyleAnimations : MonoBehaviour
     public void Idle() {
         animator.Play("Idle");
     }
+
+    public void Die() {
+        animator.Play("Die");
+    }
 }

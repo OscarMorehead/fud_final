@@ -39,6 +39,20 @@ public class NavWander : MonoBehaviour
         CheckDistanceLeft();
     }
 
+    public void Die () {
+        StartCoroutine(DieCoroutine());
+    }
+
+    IEnumerator DieCoroutine () {
+        kyleAnimations.Die();
+
+        while (true) {
+            kyleTheSickBoi.isStopped = true;
+
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
     private void CheckDistanceLeft()
     {
         if (isWalking && kyleTheSickBoi.remainingDistance <= 1f)
