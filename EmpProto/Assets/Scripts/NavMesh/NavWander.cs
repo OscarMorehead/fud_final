@@ -9,14 +9,17 @@ public class NavWander : MonoBehaviour
     bool navWaiting;
 
     [SerializeField]
-    List<Waypoint> pOI;
+    public List<Waypoint> pOI;
 
     NavMeshAgent kyleTheSickBoi;
-    int currentPOI;
-    bool isWalking;
 
     [SerializeField]
-    bool isBusy;
+    public int currentPOI;
+
+    public bool isWalking;
+
+    [SerializeField]
+    public bool isBusy;
 
     bool forward;
 
@@ -33,6 +36,8 @@ public class NavWander : MonoBehaviour
     {
         kyleTheSickBoi = GetComponent<NavMeshAgent>();
         kyleAnimations = GetComponent<KyleAnimations>();
+
+        currentPOI = Random.Range(0, pOI.Count);
     }
     public void Update()
     {
@@ -74,10 +79,13 @@ public class NavWander : MonoBehaviour
 
         if (isBusy)
         {
+            //kyleAnimations.Idle();
             waitLength += Time.deltaTime;
             if(waitLength >= totalWaitTime)
             {
+                //kyleAnimations.Walk();
                 isBusy = false;
+                isWalking = true;
                 MoveToNextPOI();
                 SetDestination();
             }
@@ -96,9 +104,11 @@ public class NavWander : MonoBehaviour
 
     private void MoveToNextPOI()
     {
+        waitLength = 0f;
         kyleAnimations.Walk();
+        currentPOI = Random.Range(0, pOI.Count);
 
-        if (UnityEngine.Random.Range(0f, 1f) <= .2f)
+       /* if (UnityEngine.Random.Range(0f, 1f) <= .2f)
         {
             forward = !forward;
         }
@@ -107,7 +117,7 @@ public class NavWander : MonoBehaviour
             currentPOI++;
             if(currentPOI  >= pOI.Count)
             {
-                currentPOI = 0;
+                currentPOI = Random.Range(0, pOI.Count);
             }
         }
         else
@@ -117,6 +127,6 @@ public class NavWander : MonoBehaviour
             {
                 currentPOI = pOI.Count - 1;
             }
-        }
+        }*/
     }
 }
